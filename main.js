@@ -1,5 +1,11 @@
 const scrabbleScore = function(word) {
+  // Declare and initialize the score value
   let scoreVal = 0;
+
+  // Turn the string to uppercase
+  word = word.toUpperCase();
+
+  // The dictionary for score values
   const letterVal = {
     A: 1,
     E: 1,
@@ -28,4 +34,18 @@ const scrabbleScore = function(word) {
     Q: 10,
     Z: 10
   };
+
+  // Forloop to itirate the string, get the character's value
+  // then sum it
+  for (var i = 0; i < word.length; i++) {
+    // Get the current character from the string
+    const inChar = word.charAt(i);
+    // Get the character's value from the dictionary
+    const val = letterVal[inChar];
+    // Accumulate the score value
+    scoreVal += val;
+  }
+
+  // Return the score value
+  return scoreVal;
 };
